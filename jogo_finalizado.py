@@ -99,7 +99,7 @@ while True:
             jogador = "X" if jogador == "O" else "O" # Alterna jogador
             jogadas +=1 # Contador de jogadas
 
-
+        
 
 
 
