@@ -81,7 +81,17 @@ while True:
     if tabuleiro[posições[jogada][0]][posições[jogada][1]] != " ":
         print("Posição ocupada.");
         continue
-
+    # Marca a jogada para o jogador
+    tabuleiro[posições[jogada][0]][posições[jogada][1]] = jogador
+    # Verfica se ganhou
+    for p in ganho:
+        for x in p:
+            if tabuleiro[posições[x][0]][posições[x][1]] != jogador:
+                break
+        else: # Se o for terminar sem break, todas as posicoes de p pertencem ao mesmo jogador
+            print("O jogador %s ganhou (%s): "%(jogador, p))
+            jogando = False
+            break
     jogador = "X" if jogador == "O" else "O" # Alterna jogador
     jogadas +=1 # Contador de jogadas
 
